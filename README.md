@@ -1,7 +1,7 @@
 # Automobile Loan Default Prediction
 
 ## Project Overview
-This project focuses on predicting loan defaults for automobile loans using a machine learning pipeline. The dataset used in this project is highly imbalanced, making it a challenging problem. To address this issue, we applied resampling techniques such as **SMOTE (Synthetic Minority Oversampling Technique)** to balance the dataset. A neural network model was developed to classify loan defaults, with metrics like precision, recall, and F1-score used to evaluate performance.
+This project focuses on predicting loan defaults for automobile loans using a machine learning pipeline. The dataset used in this project is highly imbalanced, making it a challenging problem. To address this issue, resampling techniques such as **SMOTE (Synthetic Minority Oversampling Technique)** were used to balance the dataset. A neural network model was developed to classify loan defaults, with metrics like precision, recall, and F1-score used to evaluate performance.
 
 ---
 
