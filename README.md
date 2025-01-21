@@ -17,7 +17,7 @@ The target variable is `Default`, which indicates whether the client defaulted o
 - `0`: No default
 - `1`: Default
 
-**Dataset Source**: [Kaggle - Automobile Loan Default Dataset](https://www.kaggle.com/competitions/automobile-loan-default-prediction/data)
+**Dataset Source**: [Kaggle - Automobile Loan Default Dataset](https://www.kaggle.com/datasets/saurabhbagchi/dish-network-hackathon)
 
 ---
 
