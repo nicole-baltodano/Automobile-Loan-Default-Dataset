@@ -1,44 +1,77 @@
-# Automovie Loan Default Prediction
+# Automobile Loan Default Prediction
 
-## Overview
+## Project Overview
+This project focuses on predicting loan defaults for automobile loans using a machine learning pipeline. The dataset used in this project is highly imbalanced, making it a challenging problem. To address this issue, we applied resampling techniques such as **SMOTE (Synthetic Minority Oversampling Technique)** to balance the dataset. A neural network model was developed to classify loan defaults, with metrics like precision, recall, and F1-score used to evaluate performance.
 
-This repository contains the analysis and model for predicting vehicle loan defaults for a non-banking financial institution (NBFI). The goal is to determine whether a client will default on their vehicle loan payment based on their data.
+---
 
-## Dataset Description
+## Dataset
+The dataset contains records of automobile loan applications, including various features like:
+- Client income
+- Loan annuity
+- Credit amount
+- Employment days
+- Population density in the region
 
-A non-banking financial institution (NBFI) or non-bank financial company (NBFC) is a financial institution that does not have a full banking license or is not supervised by a national or international banking regulatory agency. NBFC facilitates bank-related financial services, such as investment, risk pooling, contractual savings, and market brokering.
+The target variable is `Default`, which indicates whether the client defaulted on their loan:
+- `0`: No default
+- `1`: Default
 
-An NBFI is struggling to mark profits due to an increase in defaults in the vehicle loan category. The company aims to determine the client’s loan repayment abilities and understand the relative importance of each parameter contributing to a borrower’s ability to repay the loan.
+**Dataset Source**: [Kaggle - Automobile Loan Default Dataset](https://www.kaggle.com/competitions/automobile-loan-default-prediction/data)
 
-## Goal
+---
 
-The goal of this problem is to predict whether a client will default on the vehicle loan payment or not. For each ID in the Test_Dataset, we predict the “Default” level.
+## Methodology
+1. **Data Cleaning and Preprocessing**:
+   - Cleaned missing and inconsistent values using a custom data cleaning pipeline.
+   - Applied feature scaling and one-hot encoding for numerical and categorical features.
 
-## Datasets
+2. **Handling Imbalanced Data**:
+   - The dataset is highly imbalanced, with a majority of non-default cases (`0`).
+   - Used **SMOTE** to generate synthetic samples for the minority class (`1`), ensuring a more balanced dataset.
 
-The problem contains two datasets:
+3. **Model Development**:
+   - Built a **neural network model** with the following architecture:
+     - Input layer with normalization
+     - Three dense layers with ReLU activation and dropout for regularization
+     - Output layer with a sigmoid activation for binary classification
+   - Optimized using Adam optimizer and binary cross-entropy loss.
 
-Train_Dataset: Used for building the model.
+4. **Evaluation**:
+   - Evaluated the model using the confusion matrix, F1-score, precision, and recall.
+   - Results highlight the challenges of imbalanced data and the improvements gained through SMOTE.
 
-Test_Dataset: Used for testing the model and generating predictions.
+---
 
-The submission output from the Test_Dataset is to be provided as a CSV file.
+## Results
+### Confusion Matrix:
 
-## Evaluation Metric
 
-The performance of the model is evaluated using the F1_Score, which is the harmonic mean of Recall and Precision. More details on F1_Score can be found here.
+![image](https://github.com/user-attachments/assets/574c0645-97c1-4079-be53-ceb7b2038a1d)
 
-## Submission File Format
 
-The submission file should be a CSV file with exactly 80,900 entries plus a header row. The file should have exactly two columns:
+### Metrics:
+- **F1-Score**: 0.23
+- **Precision (Default)**: 81.5%
+- **Recall (Default)**: 13.4%
 
-## ID (sorted in any order)
+The model demonstrates strong performance for the majority class but struggles with recall for the minority class. SMOTE helps improve recall but further optimization is required.
 
-Default (contains 0 & 1, where 1 represents a default)
-Repository Contents
-Automovie Loan Default Dataset.ipynb: Jupyter notebook containing the data analysis, preprocessing, model building, and evaluation.
+---
 
-submission.csv: CSV file with the resultant predictions for the Test_Dataset.
+## How to Clone and Run
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/nicole-baltodano/automobile-loan-default-prediction.git
+   cd automobile-loan-default-prediction
+   ```
+2. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. Run the pipeline:
+   ```bash
+   python main.py
+   ```
 
-## Dataset origin
-https://www.kaggle.com/datasets/saurabhbagchi/dish-network-hackathon/data
+
