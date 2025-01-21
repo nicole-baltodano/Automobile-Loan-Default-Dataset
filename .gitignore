@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# Environment Variables
+.env
+
+# macOS
+.DS_Store
+
+# Logs
+logs/
+*.log
+
+# Virtual Environments
+venv/
+*.env
+
+# Data
+data/*.csv
+data/*.zip
+
+# Models and Pickle Files
+models/
+*.h5
+*.pkl
+
+# Other
+*.swp
+*.bak
